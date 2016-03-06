@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$lang.home}{if $ur_here} - {$ur_here} {/if}</title>
+<meta name="Copyright" content="Douco Design." />
+<link href="templates/public.css" rel="stylesheet" type="text/css">
+{include file="javascript.htm"}
+<script type="text/javascript">cloud_update_number('{$localsite}')</script>
+</head>
+<body>
+<div id="dcWrap"> {include file="header.htm"}
+ <div id="dcLeft">{include file="menu.htm"}</div>
+ <div id="dcMain"> {include file="ur_here.htm"}
+  <div id="index" class="mainBox" style="padding-top:18px;{$workspace.height}">
+   <div id="douApi"></div>
+   <!-- {if $rec eq 'default'} 管理首页 -->
+   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="indexBoxTwo">
+    <tr>
+     <td width="35%" valign="top" class="pr">
+      <div class="indexBox">
+       <div class="boxTitle">{$lang.title_site_info}</div>
+       <ul>
+        <table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+         <tr>
+          <td>{$lang.qishi_dianpu_wentizongshu}：</td>
+          <td><strong>{$sys_info.num_product}</strong></td>
+         </tr>
+         <tr>
+          <td width="120">{$lang.qishi_dianpu_yichuli}：</td>
+          <td><strong>{$sys_info.num_yichuli}</strong></td>
+         </tr>
+         <tr>
+          <td>{$lang.qishi_dianpu_weichuli}：</td>
+          <td><font color="red"><strong>{$sys_info.num_weichuli}</strong></font></td>
+         </tr>
+        </table>
+       </ul>
+      </div>
+     </td>
+     <!-- 店铺统计 -->
+     <td width="35%" valign="top" class="pr">
+      <!--<div class="indexBox">
+       <div class="boxTitle">{$lang.qishi_dianpu_tongji}</div>
+       <ul>
+        <table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+         <tr>
+          <td width="120">{$lang.num_page}：</td>
+          <td><strong>{$sys_info.num_page}</strong></td>
+         </tr>
+         <tr>
+          <td>{$lang.num_product}：</td>
+          <td><strong>{$sys_info.num_product}</strong></td>
+         </tr>
+         <tr>
+          <td>{$lang.rewrite}：</td>
+          <td><strong><!-- {if $site.rewrite} -->{$lang.open}<!-- {else} -->{$lang.close}<a href="system.php" class="cueRed ml">{$lang.open_cue}</a> 
+           <!-- {/if} --></strong></td>
+         </tr>
+         <tr>
+          <td>{$lang.if_sitemap}：</td>
+          <td><strong><!-- {if $site.sitemap} -->{$lang.open}<!-- {else} -->{$lang.close}<!-- {/if} --></strong></td>
+         </tr>
+         <tr>
+          <td>{$lang.dou_version}：</td>
+          <td><strong>{$site.douphp_version}</strong></td>
+         </tr>
+        </table>
+       </ul>
+      </div>-->
+     </td>
+     <!-- 店铺统计 -->
+     <td valign="top" class="pl">
+      <div class="indexBox">
+       <div class="boxTitle">{$lang.title_admin_tongji}</div>
+       <ul>
+        <table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+         <tr>
+          <th width="60%">{$lang.manager_wenti_fenlei}</th>
+          <th width="40%">{$lang.manager_wenti_zhanbi}</th>
+         </tr>
+         <!-- {foreach from=$product_list_zhanbi item=product_list_zhanbi} -->
+         <tr>
+          <td align="center">{$product_list_zhanbi.name}</td>
+          <td align="center">{$product_list_zhanbi.zhanbi}</td>
+         </tr>
+         <!-- {/foreach} -->
+        </table>
+       </ul>
+      </div>
+     </td>
+    </tr>
+   </table>
+   <!-- {/if} --> 
+  </div>
+ </div>
+ {include file="footer.htm"} </div>
+</body>
+</html>
